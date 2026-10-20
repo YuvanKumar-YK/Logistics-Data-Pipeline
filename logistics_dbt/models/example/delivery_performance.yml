@@ -1,0 +1,49 @@
+
+
+version: 2
+
+models:
+  - name: delivery_performance
+    description: "Summarizes order items and distinct orders by delivery status."
+
+    columns:
+      - name: delivery_status
+        description: "Delivery outcome category."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: order_item_count
+        description: "Number of item records for this delivery status."
+        data_tests:
+          - not_null
+
+      - name: unique_order_count
+        description: "Number of distinct orders for this delivery status."
+        data_tests:
+          - not_null
+
+      - name: percentage_of_items
+        description: "Percentage of all item records in this delivery status."
+        data_tests:
+          - not_null
+
+  - name: shipping_mode_performance
+    description: "Summarizes shipping duration and late-delivery rates by shipping mode."
+
+    columns:
+      - name: shipping_mode
+        description: "Shipping service category."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: order_item_count
+        description: "Number of item records for this shipping mode."
+        data_tests:
+          - not_null
+
+      - name: late_delivery_percentage
+        description: "Percentage of item records marked as late."
+        data_tests:
+          - not_null

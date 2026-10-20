@@ -1,0 +1,11 @@
+
+
+version: 2
+
+sources:
+  - name: logistics
+    description: "Existing staging layer for the DataCo supply chain dataset"
+    schema: staging
+    tables:
+      - name: stg_dataco_supply_chain
+        description: "Cleaned and renamed supply chain records from PostgreSQL"
